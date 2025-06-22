@@ -1,33 +1,24 @@
+
 import { useState } from "react";
-import "./App.css";
 
 function App() {
-  return (
-    <div>
-      <PostComponent />
-    </div>
-  );
+
+const [count,setCount] = useState(1);
+
+function counterIncrease(){
+  return setCount(count + 1)
 }
 
-const style = {
-  width: 200,
-  height: 250,
-  backgroundColor: "white",
-  //borderRadius: 10,
-  borderColor: "gray",
-  borderWidth: 1,
-  display: "flex",
-};
 
-function PostComponent() {
   return (
-    <div style={style}>
-      <img
-        src={"https://picsum.photos/200/300"}
-        style={{ width: 100, height: 100, borderRadius: 300 }}
-      />
-      <div> 100xdevs</div>
-      <div>23422-followers</div>
+    <div style={{display:"flex"}}>
+      <div  >
+         <img src="https://th.bing.com/th/id/OIP.js7OZ-JowQURfg8TyZbghAHaJH?w=141&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" height={50} width={40}/>
+      </div>
+      <div>
+        {count}
+      </div>
+      <button onClick={counterIncrease}>click</button>
     </div>
   );
 }
